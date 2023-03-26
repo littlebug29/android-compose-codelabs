@@ -7,7 +7,7 @@ For more information about Jetpack Compose, please [read the documentation](http
 
 ## 💻 Requirements
 
-The latest version of [Android Studio Arctic Fox](https://developer.android.com/studio/preview/index.html).
+[Android Studio Chipmunk](https://developer.android.com/studio).
 
 ## 🧬 Codelabs
 
@@ -15,11 +15,9 @@ The latest version of [Android Studio Arctic Fox](https://developer.android.com/
 
 Go hands-on and learn the fundamentals of declarative UI, working with state, layouts and theming.
 
-### [Layouts codelabs](https://developer.android.com/codelabs/jetpack-compose-layouts)
+### [Basic layouts codelab](https://developer.android.com/codelabs/jetpack-compose-layouts)
 
-Learn how layout works in Jetpack Compose, how to use the built-in layouts,
-[modifiers](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier),
-and even building your own custom layout.
+Learn how to implement real-world designs with the composables and modifiers that Compose provides out of the box.
 
 ### [State codelab](https://developer.android.com/codelabs/jetpack-compose-state)
 
@@ -48,6 +46,11 @@ navigate with arguments, support deep-links, and test your navigation.
 
 Learn about testing Jetpack Compose UIs. Write your first tests, and learn about testing in
 isolation, debugging tests, the semantics tree, and test synchronization.
+
+### [Accessibility codelab](https://developer.android.com/codelabs/jetpack-compose-accessibility)
+
+Learn about the various ways to improve an app’s accessibility. Increase touch target sizes, add
+content descriptions, create custom actions, and more.
 
 ## License
 

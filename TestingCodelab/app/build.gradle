@@ -20,12 +20,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
+    namespace "com.example.compose.rally"
     defaultConfig {
         applicationId "com.example.compose.rally"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName '1.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -75,7 +76,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion rootProject.composeVersion
+        kotlinCompilerExtensionVersion rootProject.composeCompilerVersion
     }
 
     packagingOptions {
@@ -86,6 +87,9 @@ android {
 }
 
 dependencies {
+    def composeBom = platform('androidx.compose:compose-bom:2023.03.00')
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
 
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
@@ -94,16 +98,17 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlinVersion"
 
     // Compose
-    implementation "androidx.compose.runtime:runtime:$rootProject.composeVersion"
-    implementation "androidx.compose.ui:ui:$rootProject.composeVersion"
-    implementation "androidx.compose.foundation:foundation:$rootProject.composeVersion"
-    implementation "androidx.compose.foundation:foundation-layout:$rootProject.composeVersion"
-    implementation "androidx.compose.material:material:$rootProject.composeVersion"
-    implementation "androidx.compose.material:material:$rootProject.composeVersion"
-    implementation "androidx.compose.runtime:runtime-livedata:$rootProject.composeVersion"
-    implementation "androidx.compose.ui:ui-tooling:$rootProject.composeVersion"
-    implementation "androidx.compose.material:material-icons-extended:$rootProject.composeVersion"
+    implementation "androidx.compose.runtime:runtime"
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.foundation:foundation"
+    implementation "androidx.compose.foundation:foundation-layout"
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.runtime:runtime-livedata"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.compose.material:material-icons-extended"
     implementation "androidx.activity:activity-compose:$rootProject.activityComposeVersion"
+    debugImplementation "androidx.compose.ui:ui-tooling"
 
     // Testing dependencies
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
@@ -111,7 +116,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 
     // Compose testing dependencies
-    androidTestImplementation "androidx.compose.ui:ui-test:$rootProject.composeVersion"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$rootProject.composeVersion"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$rootProject.composeVersion"
+    androidTestImplementation "androidx.compose.ui:ui-test"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
 }
